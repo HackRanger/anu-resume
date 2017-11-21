@@ -1,0 +1,273 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Package
+\usepackage{smartdiagram}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{mdframed}
+\usepackage{caption}
+\usepackage{lipsum}
+\usepackage{scrextend}
+
+\definecolor{pblue}{HTML}{0395DE}
+\colorlet{headercolor}{gray}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+%%%%%%%%%%%%%%%%%%%%
+% List environment %
+%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{entrylist}{%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+}{%
+  \end{tabular*}
+}
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\entry}[4]{%
+  #1&\parbox[t]{11.8cm}{%
+    \textbf{#2}%
+    \hfill%
+    { \color{pblue} #3}\\%
+    #4\vspace{\parsep}%
+  }\\}
+
+%%%%%%%%%%%%%%
+% Side block %
+%%%%%%%%%%%%%%
+
+\RequirePackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\newenvironment{aside}{%
+  \let\oldsection\section
+  \renewcommand{\section}[1]{
+    \par\vspace{\baselineskip}{\Large\headingfont\color{pblue} ##1}
+  }
+  \begin{textblock}{4}(0.5, 0)
+  \begin{flushleft}
+  \obeycr
+}{%
+  \restorecr
+  \end{flushleft}
+  \end{textblock}
+  \let\section\oldsection
+}
+
+%% ModernCV themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\renewcommand{\familydefault}{\sfdefault}
+\nopagenumbers{}
+
+%% New Commands
+\newcommand\mybitem[1]{%
+   \parbox[t]{2mm}{\textbullet}\parbox[t]{12.5cm}{#1}\\[1.6mm]}
+
+%% Adjust the page margins
+\usepackage[left=2in,right=1in,top=0.5in, bottom=0.5in,scale=0.75]{geometry}
+\usepackage{fontawesome}
+\usepackage[utf8]{inputenc}
+
+
+%% Personal data
+\firstname{Anuradha}
+\familyname{Srinivasan}
+\address{\#45, 4th main}{Dollar's Layout, BTM 2nd stage}{Bangalore 560076}
+\mobile{+91 9972127254}
+\email{anuradha.athreya@gmail.com}
+%\extrainfo{\faGithub \hspace{0.8pt} \hyperlink{HackRanger}{www.github.com/HackRanger} }
+%\photo[64pt][0.4pt]{img/anu.jpg}
+\extrainfo{Project Analyst}
+
+%%------------------------------------------------------------------------------
+%% Content
+%%------------------------------------------------------------------------------
+\renewcommand*{\bibliographyhead}[1]{}
+\begin{document}
+\makecvtitle
+
+\begin{aside}
+  \section{}
+    \includegraphics[scale=0.4]{img/anu.jpg}
+
+  \vspace{0.7cm}
+  \section{Skills}
+    \vspace{0.5cm}
+    \begin{addmargin}[-1em]{1em}
+
+    \scalebox{0.8}{
+        \smartdiagramset{distance planet-satellite=2cm}
+        \smartdiagram[connected constellation diagram]{
+            \textbf{PMO},
+            \textbf{Resources},
+            \textbf{Training},
+            \textbf{Reporting},
+            \textbf{Process}
+        }
+    }
+  \end{addmargin}
+
+    ~
+    \vspace{3.2cm}
+  \section{Personal Skills}
+    \vspace{0.5cm}
+\begin{addmargin}[-1em]{1em}
+  \scalebox{0.8}{
+    \smartdiagram[bubble diagram]{
+        \textbf{Team Player},
+        \textbf{Curiosity},
+        \textbf{Initiative},
+        \textbf{Creative},
+        \textbf{Organize}
+    }
+  }
+  \end{addmargin}
+  ~
+  \section{Languages}
+  \vspace{0.7cm}
+    \textbf{English}\includegraphics[scale=0.40]{img/5stars.png}
+    \textbf{German}\includegraphics[scale=0.40]{img/2stars.png}
+    \textbf{Hindi}\includegraphics[scale=0.40]{img/4stars.png}
+    \textbf{Kannada}\includegraphics[scale=0.40]{img/5stars.png}
+~
+\end{aside}
+
+
+
+\section{Profile}
+\mybitem{A seasoned professional with close to 6 years experience in Project Management, Program Management, Operations Man- agement and Business Analysis across the tenure.}
+\mybitem{Pro cient in Project Monitoring, data collation and analysis of PMO metrics for various organisational KPIs and Health Dashboard Reports.}
+\mybitem{Expert in SDLC processes including Waterfall model.}
+\mybitem{Proficient in Dashboard plotting in Microsoft Excel.}
+\mybitem{Extensive experience in reviewing of Project artefacts for various Process and QA compliance requirements.}
+\mybitem{Co-ordinated and communicated project delivery and cost requirements to key support functions.}
+\mybitem{Assisted in budget management activities including variance analysis, events tracking, financial results report, expenses forecasting and forecast validation.}
+\mybitem{Performed tracking, monitoring, reviewing, and reporting cost to cost center owner to ensure adherence to the project budget.}
+\mybitem{Good communication skills, interpersonal skills, self-motivated, quick learner and a team player.}
+
+
+\section{Experience}
+\vspace{0.5cm}
+
+\begin{entrylist}
+  \entry
+    {May'17-Present }
+    { Consultant, Fractal Analytics India}
+    {Deputed to Client - Philips Innovation Campus, Bangalore}
+    {
+    \mybitem{To provide insights driven analytical solutions to BT PMO team to track deployment, adoption and success of cross functional programs \& initiatives such as Planning, Dependency mapping, Road Maps across markets, Business Groups \& portfolio sites.}
+    \mybitem{Bring in higher visibility of the projects’ well-being for all programs to the project teams and the entire BT PMO.}
+    \mybitem{Hands on experience in SharePoint to streamline the existing document management and storage system.}
+    \mybitem{Managed the Tableau solution on BT Integrated Roadmap, Dependency mapping, World map view, BT Schedule performance view, comparison Baselined/Actual milestones by portfolio, Site level information, Business Group view KPI’ and ‘E2E Foundation Mapping view KPI’ to understand the scope of each program/project and measure their performance across portfolios.}
+    \mybitem{Expertise on Microsoft Project(MSP) to track the Program activities at Project level check for the progress.}
+    }
+\end{entrylist}
+
+\begin{addmargin}[-5em]{1em}
+
+\begin{entrylist}
+  \entry
+    {Aug'12--May'13 }
+    { Offshore Project Transformation Lead}
+    {IBM Global Business Services}
+    {
+    \mybitem{Managed the Demand Management Solution(DMS) tool which is a combination of Rational Team Concert interfacing with Resource Optimization (RO) Engine. This solution would be used primarily for managing demand for enhancement and new development work.}
+    \mybitem{Responsible for reporting the Analytics on demand/supply for the Lilly Account.}
+    \mybitem{Access Management for Demand Management Solution tool, Lotus Live, RTC.}
+    \mybitem{Guiding Practitioners through achieving Foundation, Experienced, Expert \& Thought leadership milestones.}
+    \mybitem{Helping the Transformation Team with all logistics related tasks for training and travel.}
+    \mybitem{Creating process documents for the tasks handled. Help with documenting solutions, process flows and user guides.}
+    }
+\end{entrylist}
+
+
+\begin{entrylist}
+  \entry
+    {Aug'11--Aug'12 }
+    { Program Coordinator - PM Center of Excellence, Delivery Excellence}
+    { IBM Global Business Services}
+    {
+    \mybitem{Guiding the Practitioners \& helping them understand the career milestones established for the MPP capability, including the milestone requirements: accreditation, certification, and validation, re-validation.}
+    \mybitem{Developing the profession goals through a capability milestone plan and suggesting high-level approaches to the practitioners to follow, as they work towards achieving the capability milestones.}
+    \mybitem{Guiding Practitioners through achieving Foundation, Experienced, Expert \& Thought leadership milestones.}
+    \mybitem{Managed Career Smart Framework Suite of tools \& the Career Framework tool.}
+    \mybitem{Successfully co-ordinated \& driven many PM Certification Review Boards. Also assisted the PMs in pack writing and pack submission.}
+    \mybitem{Assigning mentors to the Practitioner to attain Sr. or Exec PM Certification.}
+    \mybitem{Providing weekly / monthly status reports on candidates packs, levels \& assignments status.}
+    \mybitem{Instrumental in interacting with other teams on a global level to ensure that the standards are followed and acknowledged world wide standard goals.}
+    }
+\end{entrylist}
+
+\begin{entrylist}
+  \entry
+    {Jan'10--Aug'11 }
+    { Security Delivery Specialist - TCP / IP Vulnerability Scanning}
+    { IBM India Pvt. Ltd.}
+    {
+    \mybitem{Responsible for defining, developing, implementing and assuring security policies, processes, tools and architectures that encompass: - Logical controls - Network security controls - Physical controls - Risk management - Security incident \& issue management - Security integrity advisory processes - Security status checking.}
+    \mybitem{Expertise in analyzing and translating business requirements into control objectives, design security controls and implement them along with a security management cycle.}
+    \mybitem{Requesting for Security checks on the Servers for OS/Applications/Database against the Security Policies.}
+    \mybitem{Following up with the technical SMEs and Security Advisors for closure of these changes (tickets).}
+    \mybitem{Tracking the KPIs of each customer handled and updating the results to senior management.}
+    \mybitem{Provide adequate advance warning for major changes to all parties involved.}
+    \mybitem{Assist Service Managers in achieving the agreed SLAs in terms of availability by effective process management / co-ordination with various teams.}
+  }
+\end{entrylist}
+
+\begin{entrylist}
+   \entry
+    {Mar'09--Sep'09 }
+    { Associate Consultant}{Unilog Content Solutions Pvt. Ltd., Mysore}
+    {
+    \mybitem{Hands on experience on e-procurement systems which are used to automate the purchasing workflow with a searchable internal catalog generating purchase orders.}
+     \mybitem{Catalog data management: The charge of communicating with the suppliers and integrate their catalog data in the systems.}
+     \mybitem{Technical check: The quality of the data improvisation is made by checking each catalog to ensure that it meets the specifications and quality requirements.}
+     \mybitem{Data maintenance (Data Quality Services): The maintenance and optimization of all associated suppliers and product information are done, such as text, images, classification systems or features.}
+     \mybitem{Consulting \& training: Consultation services regarding the details of catalog creation and management.}
+     \mybitem{Creating and managing relationships between organizations: Create organizations in net markets between the suppliers and buyer and provide a comprehensive and active support for the full range of sales and purchasing processes.}
+     }
+\end{entrylist}
+
+\section{Awards \& Recognitions}
+\begin{entrylist}
+\entry
+    {2013}{Received ``IBM Bravo'' and "IBM Thank You" awards for demontrating persistent performance and commitment which contributed to IBM's business values.}{}{}
+    \entry
+      {2012}{IBM Eminence and Excellence Beacon Award for outstanding SME}{}{}
+    \entry
+      {2011}{IBM GBS Eminence and Excellence Spark Award for upcoming talent}{}{}
+    \entry
+      {2010}{Performance Excellence for top talent.}{}{}
+    \entry
+      {2010-2011}{Received 2 "IBM Thank You" award for contributing to IBM business values and meeting internal stakeholder expectation.}{}{}
+    \entry
+      {2012}{Received ``IBM Blue Thx'' for demonstrating persistent performance and commitment which contributed to IBM's business values.}{}{}
+\end{entrylist}
+
+
+\section{Workshops \& Trainings}
+\begin{entrylist}
+\entry
+    {}{Project Management Principles - PM99G.}{}{}
+    \entry
+      {}{Project Management Fundamentals - PM54G}{}{}
+    \entry
+      {}{Participated in the One day workshop - ``Principles of Project Management'' in collaboration with Rotary Club and Project Management Institute, Bangalore Chapter in Nov 2010}{}{}
+    \entry
+      {}{2-day boot camp on ``How to implement GDF (Global Delivery Framework)''}{}{}
+    \entry
+      {}{SQA audit training organized by IBM UK}{}{}
+\end{entrylist}
+
+\end{addmargin}
+
+\begin{flushright}
+\emph{Nov 21th, 2017}
+\\
+\emph{Anuradha Srinivasan}
+\end{flushright}
+
+\end{document}
